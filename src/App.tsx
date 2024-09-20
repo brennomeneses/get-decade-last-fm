@@ -123,7 +123,7 @@ function App() {
       <option value="pt">🇧🇷&emsp; Português</option>
       <option value="de">🇩🇪&emsp; Deutsch</option>
     </select>
-      <div>
+      <div style={{ paddingTop: '30px' }}>
         <a href="https://last.fm/" target="_blank">
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Last.fm_favicon.png" className="logo" alt="Vite logo" />
         </a>
@@ -142,6 +142,7 @@ function App() {
         {image && (
             <>
               <img src={image} className="image" alt="image" />
+              <br />
               <button onClick={share}>Share <FaShare/></button>
               <button onClick={downloadImage}><BiSolidDownload /></button>
             </>
