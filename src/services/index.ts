@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://ws.audioscrobbler.com/2.0/",
+  baseURL: "https://ws.audioscrobbler.com/2.0/",
 });
