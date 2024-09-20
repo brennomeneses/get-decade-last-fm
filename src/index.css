@@ -16,7 +16,13 @@
 }
 
 .image {
-  width: 65vw;
+  width: 350px;
+}
+
+@media screen and (max-width: 600px) {
+  .image {
+    width: 65vw;
+  }
 }
 
 .loaderContainer {
