@@ -185,7 +185,7 @@ function App() {
           )}
       </div>
       <p className="read-the-docs">
-        {languages[language].liked} <a href="https://last.fm/" target="_blank">{languages[language].supportMe}</a>
+        {languages[language].liked} <a href="https://github.com/brennomeneses/get-decade-last-fm" target="_blank">{languages[language].supportMe}</a>
       </p>
       <p className="read-the-docs">
         <a href="https://last.fm/user/Koeninsberg" target="_blank">Last.FM </a>

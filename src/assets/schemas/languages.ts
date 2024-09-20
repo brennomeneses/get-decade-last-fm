@@ -5,7 +5,7 @@ const languages: Readonly<Record<string, any>> = {
     submit: "Search",
     loading: "Loading Statistics...",
     liked: "Liked? Please",
-    supportMe: "Support Me",
+    supportMe: "Give me a star",
     share: "Share",
   },
   pt: {
@@ -14,7 +14,7 @@ const languages: Readonly<Record<string, any>> = {
     submit: "Procurar",
     loading: "Carregando estatísticas...",
     liked: "Gostou? Por favor",
-    supportMe: "Apoie-Me",
+    supportMe: "Me dê uma estrela",
     share: "Compartilhar",
   },
   de: {
@@ -23,7 +23,7 @@ const languages: Readonly<Record<string, any>> = {
     submit: "Suchen",
     loading: "Statistiken werden geladen...",
     liked: "Geschenkt? Bitte",
-    supportMe: "Unterstützen Sie mich",
+    supportMe: "Gib mir einen Stern",
     share: "Teilen",
   }
 };
