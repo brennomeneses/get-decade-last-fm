@@ -155,6 +155,7 @@ function App() {
                     innerRadius={"45%"} 
                     outerRadius={"60%"} 
                     fill="#82ca9d" 
+                    isAnimationActive={false}
                   >
                     <Label 
                       value={`${band[0].range} : ${band[0].count.toFixed(0)}%`}
