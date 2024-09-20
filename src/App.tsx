@@ -80,6 +80,14 @@ function App() {
     const input = event.currentTarget.querySelector('input');
     const data = await getUserGens(input!.value);
     setUsername(input!.value);
+
+    console.log(data);
+
+    if(!data || typeof data === 'string'){
+      alert('User not found');
+      setLoading(false);
+      return;
+    }
   
     const total = data.reduce((acc, e) => acc + e.count, 0);
     setBand(data.map((e) => ({ range: e.range, count: (e.count / total) * 100 })).sort((a, b) => b.count - a.count));

@@ -10,6 +10,12 @@ export const getUserGens = async (user: string) => {
 
   const data = await getUser(user);
 
+  console.log(data);
+
+  if(typeof data === 'string'){
+    return data;
+  }
+
   const formatedAlbums = data.album.map((album) => ({ mbid: album.mbid, count: Number.parseInt(album.playcount), name: album.name })).filter(album => album.mbid !== '');
 
   const throttledFetch = limiter.wrap(getSong);
