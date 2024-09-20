@@ -16,7 +16,7 @@ export const getUserGens = async (user: string) => {
   
   const albums = await Promise.all(formatedAlbums.map(async (album) => {
     try {
-      const { mbid, count, name } = album;
+      const { mbid, count } = album;
       const song = await throttledFetch(mbid);
       return { year: song.date.split('-')[0], count };
     } catch (error) {
