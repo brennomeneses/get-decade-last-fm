@@ -13,6 +13,8 @@ interface IGenerations {
   count: number;
 }
 
+const userLanguage = navigator.language;
+
 function App() {
   const [ username, setUsername ] = useState<string>('');
   const [ image, setImage ] = useState<string | null>(null);
@@ -21,6 +23,16 @@ function App() {
   const [ band, setBand ] = useState<IGenerations[] | null>(null);
   
   const componentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if(userLanguage === 'pt-BR'){
+      setLanguage('pt');      
+    }else if(userLanguage === 'de-DE'){
+      setLanguage('de');
+    } else {
+      setLanguage('en');
+    }
+  }, []);
 
   useEffect(() => {
     if (band && band.length > 0 && componentRef.current) {
@@ -130,6 +142,8 @@ function App() {
         {image && (
             <>
               <img src={image} className="image" alt="image" />
+              <button onClick={share}>Share <FaShare/></button>
+              <button onClick={downloadImage}><BiSolidDownload /></button>
             </>
           )}
         {loading && (
@@ -145,7 +159,7 @@ function App() {
                   My music Generations:
                   <Subtitle>{username}</Subtitle>
                 </Title>
-                <PieChart height={500} width={400}>
+                <PieChart height={900} width={1000}>
                   <Pie 
                     data={band} 
                     dataKey="count"
@@ -162,11 +176,11 @@ function App() {
                       style={{ 
                         fill: 'white', 
                         fontWeight: 'bold', 
-                        fontSize: '1.6em' 
+                        fontSize: '3.6em' 
                       }}
                       position="center"
                     />
-                    <LabelList dataKey="range" position="outside" stroke="0" style={{ fontWeight: 'bold' }} />
+                    <LabelList dataKey="range" offset={20} position="outside" stroke="0" style={{ fontWeight: 'bold', fontSize: '2.5em' }} />
                     {band.map((item: IGenerations) => (
                       <Cell key={item.range} fill={COLORS.find((e) => e.generation === item.range)?.color} />
                     ))}
@@ -179,8 +193,6 @@ function App() {
                 </Podium>
                 <Footer>music-generations.vercel.app</Footer>
               </Background>
-              <button onClick={share}>Share <FaShare/></button>
-              <button onClick={downloadImage}><BiSolidDownload /></button>
             </>
           )}
       </div>
