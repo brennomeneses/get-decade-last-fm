@@ -82,7 +82,7 @@ function App() {
     setUsername(input!.value);
   
     const total = data.reduce((acc, e) => acc + e.count, 0);
-    setBand(data.map((e) => ({ range: e.range, count: (e.count / total) * 100 })));
+    setBand(data.map((e) => ({ range: e.range, count: (e.count / total) * 100 })).sort((a, b) => b.count - a.count));
 
     setLoading(false);
   };
