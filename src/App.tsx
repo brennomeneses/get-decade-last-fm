@@ -211,7 +211,6 @@ function App() {
       <p className="read-the-docs">
         <a href="https://last.fm/user/Koeninsberg" target="_blank">Last.FM </a>
         <a href="https://github.com/brennomeneses" target="_blank">GitHub </a>
-        <a href="https://koeninsberg.bsky.social/" target="_blank">BlueSky</a>
       </p>
     </>
   )
